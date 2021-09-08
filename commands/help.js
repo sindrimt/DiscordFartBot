@@ -18,12 +18,12 @@ module.exports = {
 
     for (const file of eventFiles) {
       const event = require(`./${file}`);
-      const { description } = event;
+      const { description, name } = event;
       console.log(description);
 
-      const eventName = file.slice(0, -3);
+      // const eventName = file.slice(0, -3);
 
-      nameArray.push(eventName);
+      nameArray.push(name);
 
       text += "  -!" + nameArray[i] + "- " + description + "\n";
       msg.edit("Here is a list of Commands: \n" + text);

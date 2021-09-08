@@ -5,6 +5,6 @@ module.exports = {
   description: "Responds with hello",
   aliases: ["sd"],
   execute: async (client, message) => {
-    return message.channel.send("Hello!!! :wink:");
+    return message.channel.send("Hello!!! ");
   },
 };
