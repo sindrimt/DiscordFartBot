@@ -4,6 +4,6 @@ module.exports = {
   description: "Links to github",
   aliases: ["sd"],
   execute: async (client, message) => {
-    return await message.reply("https://github.com/sindrimt/FartingBot");
+    return await message.reply("https://github.com/sindrimt/DiscordFartingBot");
   },
 };

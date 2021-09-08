@@ -22,9 +22,9 @@ client.on("messageCreate", async (message) => {
   var randomIntCheckValue = Math.floor(Math.random() * 10) + 1; // 0-3
   console.log(randomIntCheckValue);
 
-  if (randomIntCheckValue > 7 /* && !message.content.includes("d") */) return; // 70% sjanse for at den spiller av lyd
+  if (randomIntCheckValue > 2 /* && !message.content.includes("d") */) return; // 20% sjanse for at den spiller av lyd
 
-  var randInt = Math.floor(Math.random() * 2) + 1; // 0-2
+  var randInt = Math.floor(Math.random() * 4) + 1; //TODO endre til array Resourses.length
   console.log("Dette er en ny Log " + message.content);
   const channel = message.member.voice.channel;
 

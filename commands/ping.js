@@ -9,7 +9,7 @@ module.exports = {
     msg.edit(
       `Ping: ${client.ws.ping} ms. \nMessage Ping: ${
         msg.createdTimestamp - message.createdTimestamp
-      } ms.\nIm gay`
+      } `
     );
   },
 };
