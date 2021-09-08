@@ -24,7 +24,7 @@ client.on("messageCreate", async (message) => {
 
   if (randomIntCheckValue > 2 /* && !message.content.includes("d") */) return; // 20% sjanse for at den spiller av lyd
 
-  var randInt = Math.floor(Math.random() * 4) + 1; //TODO endre til array Resourses.length
+  var randInt = Math.floor(Math.random() * config.resources.length - 1) + 1;
   console.log("Dette er en ny Log " + message.content);
   const channel = message.member.voice.channel;
 
