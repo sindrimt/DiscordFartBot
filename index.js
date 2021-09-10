@@ -1,5 +1,6 @@
 // node . for å kjøre
 const Discord = require("discord.js");
+
 const client = new Discord.Client({ intents: 32767 });
 
 const config = require("./Data/config.json"); // Importerer export fra config.json
