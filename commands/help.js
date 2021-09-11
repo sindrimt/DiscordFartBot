@@ -1,6 +1,7 @@
 const config = require("../Data/config.json");
 const fs = require("fs");
 
+
 module.exports = {
   name: "help",
   description: "List of commands",
@@ -32,4 +33,5 @@ module.exports = {
     i = 0;
     console.log(nameArray);
   },
+
 };
