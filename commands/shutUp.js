@@ -1,6 +1,9 @@
 const config = require("../Data/config.json");
 const voiceDiscord = require("@discordjs/voice");
 
+const EventEmitter = require('events')
+const eventEmitter = new EventEmitter()
+
 module.exports = {
     name: "shutup",
     description: "Leaves channel",
@@ -18,6 +21,7 @@ module.exports = {
         });
 
         connection.destroy();
+
     },
 };
 

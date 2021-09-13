@@ -37,7 +37,7 @@ module.exports = {
     i = 0;
     console.log(nameArray);
   }, */
-    const exampleEmbed = new MessageEmbed()
+    const embed = new MessageEmbed()
       .setColor('#0099ff')
       .setTitle('List of commands')
       .setURL(github)
@@ -46,7 +46,7 @@ module.exports = {
       .setTimestamp()
       .setFooter(`prefix: ${prefix} - Enjoy command`, luffy);
 
-    message.channel.send({ embeds: [exampleEmbed] });
+    message.channel.send({ embeds: [embed] });
 
   }
 };

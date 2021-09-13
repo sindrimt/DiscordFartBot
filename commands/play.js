@@ -3,8 +3,13 @@ const Discord = require("discord.js");
 const client = new Discord.Client({ intents: 32767 });
 
 const { DisTube } = require("distube");
-// const ytsr = require('ytsr');
+const ytsr = require('ytsr');
 
+const { MessageEmbed } = require('discord.js');
+
+const prefix = config.prefix;
+const luffy = config.images.luffy;
+const github = config.links.github;
 
 const distube = new DisTube(client, { emitNewSongOnly: true, searchSongs: 0, leaveOnFinish: true });
 
@@ -13,19 +18,34 @@ module.exports = {
     description: "Plays youtube song",
     aliases: ["sd"],
     execute: async (client, message, args) => {
-        //const test = await ytsr('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley').items;
-
-        //console.log("Test    :  " + test);
-        message.channel.send(`PLays music`);
         const string = args.join(" ");
-        console.log("Args unformatted: " + args);
         let result = args.toString().replace(/,/g, " ");
-        console.log("Args Formatted: " + result);
+        message.channel.send(`Searching matches for : ${result}`);
 
         try {
             distube.voices.join(message.member.voice.channel);
             distube.play(message, string);
-            message.channel.send(`Now playing search result for ${result}`);
+            //console.log(message.author.avatarURL());
+            distube.on("playSong", (queue, song) => {
+
+                const embed = new MessageEmbed()
+                    .setColor('#0099ff')
+                    .setTitle(song.name)
+                    .setURL(song.url)
+                    .setAuthor(`${config.author}`, message.author.avatarURL())
+                    // .setDescription(client.commands.map(cmd => `\`${prefix + cmd.name}\``).join(", "))
+                    .setThumbnail(song.thumbnail)
+                    .addFields(
+                        { name: 'Channel', value: `${song.uploader.name}`, inline: true },
+                        { name: 'Video length', value: `${song.formattedDuration}`, inline: true },
+                        { name: 'Some cool', value: `Cool value`, inline: true },
+                    )
+                    //.addField('Inline field title', 'Some value here', true)
+                    .setTimestamp()
+                    .setFooter(` - Enjoy Music :)`, luffy);
+
+                queue.textChannel.send({ embeds: [embed] })
+            });
         } catch (e) {
             message.channel.send(`Error: ${e}`);
         }
