@@ -44,7 +44,7 @@ module.exports = {
       .setAuthor(`${config.author}`, luffy, github)
       .setDescription(client.commands.map(cmd => `\`${prefix + cmd.name}\``).join(", "))
       .setTimestamp()
-      .setFooter('prefix: ! - Enjoy command', luffy);
+      .setFooter(`prefix: ${prefix} - Enjoy command`, luffy);
 
     message.channel.send({ embeds: [exampleEmbed] });
 
