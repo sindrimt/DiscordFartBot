@@ -1,13 +1,17 @@
 const config = require("../Data/config.json");
 const fs = require("fs");
+const { MessageEmbed } = require('discord.js');
 
+const prefix = config.prefix;
+const luffy = config.images.luffy;
+const github = config.links.github;
 
 module.exports = {
   name: "help",
   description: "List of commands",
   aliases: ["sd"],
   execute: async (client, message) => {
-    const eventFiles = fs
+    /* const eventFiles = fs
       .readdirSync("commands/")
       .filter((file) => file.endsWith(".js"));
 
@@ -32,6 +36,17 @@ module.exports = {
     }
     i = 0;
     console.log(nameArray);
-  },
+  }, */
+    const exampleEmbed = new MessageEmbed()
+      .setColor('#0099ff')
+      .setTitle('List of commands')
+      .setURL(github)
+      .setAuthor(`${config.author}`, luffy, github)
+      .setDescription(client.commands.map(cmd => `\`${prefix + cmd.name}\``).join(", "))
+      .setTimestamp()
+      .setFooter('prefix: ! - Enjoy command', luffy);
 
+    message.channel.send({ embeds: [exampleEmbed] });
+
+  }
 };
