@@ -5,6 +5,7 @@ const EventEmitter = require('events')
 const eventEmitter = new EventEmitter()
 
 module.exports = {
+    //TODO HEI JEG MÅ SLETTE LISTENERS
     name: "shutup",
     description: "Leaves channel",
     aliases: ["sd"],

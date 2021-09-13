@@ -27,18 +27,17 @@ module.exports = {
             distube.play(message, string);
             //console.log(message.author.avatarURL());
             distube.on("playSong", (queue, song) => {
-
                 const embed = new MessageEmbed()
                     .setColor('#0099ff')
                     .setTitle(song.name)
                     .setURL(song.url)
-                    .setAuthor(`${config.author}`, message.author.avatarURL())
+                    .setAuthor(`by  ${message.author.username}`, message.author.avatarURL())
                     // .setDescription(client.commands.map(cmd => `\`${prefix + cmd.name}\``).join(", "))
                     .setThumbnail(song.thumbnail)
                     .addFields(
                         { name: 'Channel', value: `${song.uploader.name}`, inline: true },
                         { name: 'Video length', value: `${song.formattedDuration}`, inline: true },
-                        { name: 'Some cool', value: `Cool value`, inline: true },
+                        { name: 'Views', value: `${song.views}`, inline: true },
                     )
                     //.addField('Inline field title', 'Some value here', true)
                     .setTimestamp()
