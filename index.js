@@ -31,6 +31,7 @@ client.on("messageCreate", async (message) => {
   console.log(`Message : \x1b[32m${message.content}\x1b[0m , Random Index : \x1b[36m${randomIntCheckValue}`);
 
   if (randomIntCheckValue > 0 /* && !message.content.includes("d") */) return; //! Endre til en verdi > 0 for å aktivere
+  //                                                                               Gjør ingenting nå
 
   var randInt = Math.floor(Math.random() * config.resources.length - 1) + 1;
   const channel = message.member.voice.channel;
