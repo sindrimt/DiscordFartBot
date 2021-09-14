@@ -8,7 +8,7 @@ module.exports = {
     //TODO HEI JEG MÅ SLETTE LISTENERS
     name: "shutup",
     description: "Leaves channel",
-    aliases: ["sd"],
+    aliases: ["hysj"],
     execute: async (client, message) => {
         message.channel.send("Okay masta :disappointed_relieved: ");
         const channel = message.member.voice.channel;

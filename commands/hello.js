@@ -3,8 +3,8 @@ const config = require("../Data/config.json");
 module.exports = {
   name: "hello",
   description: "Responds with hello",
-  aliases: ["sd"],
+  aliases: ["yo"],
   execute: async (client, message) => {
-    return message.channel.send("Hello!!! ");
+    return message.channel.send("Hello!!! " + config.emotes.wink);
   },
 };

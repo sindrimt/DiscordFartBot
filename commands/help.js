@@ -9,7 +9,7 @@ const github = config.links.github;
 module.exports = {
   name: "help",
   description: "List of commands",
-  aliases: ["sd"],
+  aliases: ["h"],
   execute: async (client, message) => {
     /* const eventFiles = fs
       .readdirSync("commands/")

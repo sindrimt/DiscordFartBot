@@ -10,43 +10,62 @@ const { MessageEmbed } = require('discord.js');
 const prefix = config.prefix;
 const luffy = config.images.luffy;
 const github = config.links.github;
+const emotes = config.emotes;
 
 const distube = new DisTube(client, { emitNewSongOnly: true, searchSongs: 0, leaveOnFinish: true });
+//const que = new DisTube.Queue(distube, message, song, textChannel);
+
+distube.on("addSong", (queue, song) => {
+    queue.textChannel.send(
+        `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}. `
+    )
+    console.log("Duration " + queue.formattedDuration);
+
+});
+
+distube.on("playSong", (queue, song) => {
+    const embed = new MessageEmbed()
+        .setColor('#0099ff')
+        .setTitle(song.name)
+        .setURL(song.url)
+        .setAuthor(`by  ${song.user.username}`, song.user.avatarURL())
+        // .setDescription(client.commands.map(cmd => `\`${prefix + cmd.name}\``).join(", "))
+        .setThumbnail(song.thumbnail)
+        .addFields(
+            { name: 'Channel', value: `${song.uploader.name}`, inline: true },
+            { name: 'Video length', value: `${song.formattedDuration}`, inline: true },
+            { name: 'Views', value: `${song.views}`, inline: true },
+        )
+        //.addField('Inline field title', 'Some value here', true)
+        .setTimestamp()
+        .setFooter(` - Enjoy Music :)`, luffy);
+
+    queue.textChannel.send({ embeds: [embed] })
+});
 
 module.exports = {
     name: "play",
     description: "Plays youtube song",
-    aliases: ["sd"],
+    aliases: ["p"],
     execute: async (client, message, args) => {
         const string = args.join(" ");
         let result = args.toString().replace(/,/g, " ");
-        message.channel.send(`Searching matches for : ${result}`);
+        message.channel.send(emotes.magGlass + " Searching matches for : " + "**" + result + "**");
+        //que.addToQueue(string, position);
+
+
 
         try {
             distube.voices.join(message.member.voice.channel);
             distube.play(message, string);
-            //console.log(message.author.avatarURL());
-            distube.on("playSong", (queue, song) => {
-                const embed = new MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(song.name)
-                    .setURL(song.url)
-                    .setAuthor(`by  ${message.author.username}`, message.author.avatarURL())
-                    // .setDescription(client.commands.map(cmd => `\`${prefix + cmd.name}\``).join(", "))
-                    .setThumbnail(song.thumbnail)
-                    .addFields(
-                        { name: 'Channel', value: `${song.uploader.name}`, inline: true },
-                        { name: 'Video length', value: `${song.formattedDuration}`, inline: true },
-                        { name: 'Views', value: `${song.views}`, inline: true },
-                    )
-                    //.addField('Inline field title', 'Some value here', true)
-                    .setTimestamp()
-                    .setFooter(` - Enjoy Music :)`, luffy);
 
-                queue.textChannel.send({ embeds: [embed] })
-            });
-        } catch (e) {
-            message.channel.send(`Error: ${e}`);
+            //console.log(message.author.avatarURL());
+
+
+        }
+        catch (e) {
+            message.channel.send(`Join a voice channel ${emotes.wink}`);
+            console.log(`Error ${e}`);
         }
     },
 };
