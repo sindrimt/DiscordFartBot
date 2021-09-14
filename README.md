@@ -9,6 +9,7 @@
 ```{
   "token": "YOUR_KEY_HERE",
   "prefix": "!",
-  "author": "YOUR_NAME",```
+  "author": "YOUR_NAME",
+```
 
 4. To start the bot : ```node .``` 
