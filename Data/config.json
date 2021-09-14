@@ -14,5 +14,10 @@
   },
   "links": {
     "github": "https://github.com/sindrimt/DiscordFartingBot"
+  },
+  "emotes": {
+    "magGlass": ":mag_right:",
+    "notes": ":notes:",
+    "wink": ":wink:"
   }
 }
