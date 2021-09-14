@@ -5,10 +5,9 @@ const EventEmitter = require('events')
 const eventEmitter = new EventEmitter()
 
 module.exports = {
-    //TODO HEI JEG MÅ SLETTE LISTENERS
     name: "shutup",
     description: "Leaves channel",
-    aliases: ["hysj"],
+    aliases: ["stfu"],
     execute: async (client, message) => {
         message.channel.send("Okay masta :disappointed_relieved: ");
         const channel = message.member.voice.channel;

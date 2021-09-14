@@ -8,7 +8,7 @@
 >Change the fields in Data/config.json
 ```{
   "token": "YOUR_KEY_HERE",
-  "prefix": "!",
+  "prefix": "PREFIX_HERE (ex. <b>!<b> or <b>?<b>)",
   "author": "YOUR_NAME",
 ```
 
