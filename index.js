@@ -30,7 +30,7 @@ client.on("messageCreate", async (message) => {
   var randomIntCheckValue = Math.floor(Math.random() * 10) + 1; // 0-3
   console.log(`Message : \x1b[32m${message.content}\x1b[0m , Random Index : \x1b[36m${randomIntCheckValue}`);
 
-  if (randomIntCheckValue > 2 /* && !message.content.includes("d") */) return; // 20% sjanse for at den spiller av lyd
+  if (randomIntCheckValue > 0 /* && !message.content.includes("d") */) return; //! Endre til en verdi > 0 for å aktivere
 
   var randInt = Math.floor(Math.random() * config.resources.length - 1) + 1;
   const channel = message.member.voice.channel;

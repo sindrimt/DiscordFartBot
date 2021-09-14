@@ -19,7 +19,10 @@ distube.on("addSong", (queue, song) => {
     queue.textChannel.send(
         `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}. `
     )
-    console.log("Duration " + queue.formattedDuration);
+    /* console.log("Duration " + queue.formattedDuration);
+    console.log('Current queue:\n' + queue.songs.map((song, id) =>
+        `**${id + 1}**. [${song.name}](${song.url}) - \`${song.formattedDuration}\``
+    ).join("\n")); */
 
 });
 
@@ -43,11 +46,16 @@ distube.on("playSong", (queue, song) => {
     queue.textChannel.send({ embeds: [embed] })
 });
 
+
 module.exports = {
     name: "play",
     description: "Plays youtube song",
     aliases: ["p"],
+    distube,
     execute: async (client, message, args) => {
+        /* const queue = distube.getQueue(message);
+        console.log(queue); */
+
         const string = args.join(" ");
         let result = args.toString().replace(/,/g, " ");
         message.channel.send(emotes.magGlass + " Searching matches for : " + "**" + result + "**");
