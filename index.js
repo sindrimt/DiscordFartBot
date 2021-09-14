@@ -1,4 +1,5 @@
 // node . for å kjøre
+
 const Discord = require("discord.js");
 
 const client = new Discord.Client({ intents: 32767 });
@@ -21,6 +22,8 @@ require("./util/handlers")(client);
   }
 }); */
 
+// DENNE spiller av en av lydene i config/resources randomly
+// med en bestemt sjanse (randomIntCheckValue) :)
 client.on("messageCreate", async (message) => {
 
   if (message.author.bot || message.content.startsWith(prefix)) {
@@ -41,6 +44,7 @@ client.on("messageCreate", async (message) => {
   const player = voiceDiscord.createAudioPlayer();
   const resource = voiceDiscord.createAudioResource(resources[randInt]);
 
+  // Joiner channel (Litt outdated men hey, works ;D)
   const connection = voiceDiscord.joinVoiceChannel({
     channelId: channel.id,
     guildId: message.guild.id,
