@@ -30,7 +30,7 @@ module.exports = async (client) => {
 
     /* object.category.forEach((cat) => {
       console.log(cat);
-    }) */
+    })  */
 
     object.aliases.forEach((alias) => {
       client.aliases.set(alias, object.name);
