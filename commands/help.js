@@ -40,10 +40,12 @@ module.exports = {
     var misc = [];
     var music = [];
 
+    // Filtrer ut commands med category misc
     client.commands.forEach((cmd => {
       if (!cmd.category.includes("misc")) return;
       misc.push(`\`${prefix + cmd.name}\``);
     }))
+    // Filtrer ut commands med category music
     client.commands.forEach((cmd => {
       if (!cmd.category.includes("music")) return;
       music.push(`\`${prefix + cmd.name}\``);
