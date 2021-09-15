@@ -59,7 +59,7 @@ module.exports = {
 
         const string = args.join(" ");
         let result = args.toString().replace(/,/g, " ");
-        message.channel.send(emotes.magGlass + " Searching matches for : " + "**" + result + "**");
+        message.channel.send(emotes.magGlass + " Searching matches for : " + "`" + result + "`");
         //que.addToQueue(string, position);
 
         try {
