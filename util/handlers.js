@@ -28,12 +28,17 @@ module.exports = async (client) => {
 
     client.commands.set(object.name, object);
 
+    /* object.category.forEach((cat) => {
+      console.log(cat);
+    }) */
+
     object.aliases.forEach((alias) => {
       client.aliases.set(alias, object.name);
     });
     console.log(
       `\x1b[32m[LOGS] \x1b[35m[CMDS] \x1b[36m${object.name}\x1b[37m has been loaded.\x1b[0m` // Colors
     );
+    // console.log(client.categories);
   }
   //}
 };

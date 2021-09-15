@@ -8,7 +8,8 @@ const github = config.links.github;
 module.exports = {
   name: "help",
   description: "List of commands",
-  aliases: ["h"],
+  aliases: ["h", "commands"],
+  category: ["misc"],
   execute: async (client, message) => {
     /* const eventFiles = fs
       .readdirSync("commands/")
@@ -36,12 +37,25 @@ module.exports = {
     i = 0;
     console.log(nameArray);
   }, */
+    var misc = [];
+    var music = [];
+
+    client.commands.forEach((cmd => {
+      if (!cmd.category.includes("misc")) return;
+      misc.push(`\`${prefix + cmd.name}\``);
+    }))
+    client.commands.forEach((cmd => {
+      if (!cmd.category.includes("music")) return;
+      music.push(`\`${prefix + cmd.name}\``);
+    }))
+
     const embed = new MessageEmbed()
       .setColor('#0099ff')
       .setTitle('List of commands')
       .setURL(github)
       .setAuthor(`${config.author}`, luffy, github)
-      .setDescription(client.commands.map(cmd => `\`${prefix + cmd.name}\``).join(", "))
+      .setDescription("**Misc:** " + misc.join(", ") + "\n**Music:** " + music.join(", "))
+
       .setTimestamp()
       .setFooter(`prefix: ${prefix} - Enjoy command`, luffy);
 

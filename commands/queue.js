@@ -11,6 +11,7 @@ module.exports = {
     name: "queue",
     description: "Gets queue",
     aliases: ["q"],
+    category: ["music"],
     execute: async (client, message) => {
 
         const queue = distube.getQueue(message);

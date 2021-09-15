@@ -5,6 +5,7 @@ module.exports = {
     name: "skip",
     description: "Skips song",
     aliases: ["s"],
+    category: ["music"],
     execute: async (client, message) => {
 
         const queue = distube.getQueue(message);

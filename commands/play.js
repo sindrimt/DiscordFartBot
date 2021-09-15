@@ -51,6 +51,7 @@ module.exports = {
     name: "play",
     description: "Plays youtube song",
     aliases: ["p"],
+    category: ["music"],
     distube,
     execute: async (client, message, args) => {
         /* const queue = distube.getQueue(message);

@@ -7,6 +7,7 @@ module.exports = {
   name: "sound",
   description: "Plays epic sound",
   aliases: ["snd"],
+  category: ["misc"],
   execute: async (client, message) => {
     const channel = message.member.voice.channel;
     if (!channel) return message.channel.send("Join a voice channel :wink:");

@@ -4,6 +4,7 @@ module.exports = {
     name: "pause",
     aliases: ["hold"],
     description: "Pauses music",
+    category: ["music"],
 
     execute: async (client, message, args) => {
         const queue = distube.getQueue(message);

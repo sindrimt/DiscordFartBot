@@ -11,6 +11,8 @@ const token = config.token;
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
+client.categories = new Discord.Collection();
+
 const voiceDiscord = require("@discordjs/voice");
 
 require("./util/handlers")(client);

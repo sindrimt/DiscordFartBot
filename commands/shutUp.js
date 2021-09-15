@@ -8,6 +8,7 @@ module.exports = {
     name: "shutup",
     description: "Leaves channel",
     aliases: ["stfu"],
+    category: ["music"],
     execute: async (client, message) => {
         message.channel.send("Okay masta :disappointed_relieved: ");
         const channel = message.member.voice.channel;
