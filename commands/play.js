@@ -61,14 +61,11 @@ module.exports = {
         message.channel.send(emotes.magGlass + " Searching matches for : " + "**" + result + "**");
         //que.addToQueue(string, position);
 
-
-
         try {
             distube.voices.join(message.member.voice.channel);
             distube.play(message, string);
 
             //console.log(message.author.avatarURL());
-
 
         }
         catch (e) {

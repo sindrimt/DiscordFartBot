@@ -1,5 +1,4 @@
 const config = require("../Data/config.json");
-const fs = require("fs");
 const { MessageEmbed } = require('discord.js');
 
 const prefix = config.prefix;

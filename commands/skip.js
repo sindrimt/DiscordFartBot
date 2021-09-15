@@ -1,10 +1,4 @@
-const Discord = require("discord.js");
-const client = new Discord.Client({ intents: 32767 });
-
 const config = require("../Data/config.json");
-const voiceDiscord = require("@discordjs/voice");
-const { DisTube } = require("distube");
-const ytsr = require('ytsr');
 const { distube } = require("./play");
 
 module.exports = {

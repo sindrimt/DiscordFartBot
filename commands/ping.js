@@ -1,4 +1,3 @@
-const config = require("../Data/config.json");
 module.exports = {
   name: "ping",
   description: "Gives ping and message ping",

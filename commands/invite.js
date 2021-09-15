@@ -1,5 +1,3 @@
-const config = require("../Data/config.json");
-
 module.exports = {
   name: "invite",
   description: "Invite link",

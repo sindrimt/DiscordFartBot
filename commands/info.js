@@ -1,4 +1,3 @@
-const config = require("../Data/config.json");
 module.exports = {
   name: "info",
   description: "Links to github",
