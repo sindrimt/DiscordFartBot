@@ -15,6 +15,7 @@
     "ffmpeg-static": "^4.4.0",
     "fs": "^0.0.1-security",
     "libsodium-wrappers": "^0.7.9",
+    "node-fetch": "^3.0.0",
     "opusscript": "^0.0.8",
     "ytsr": "^3.5.3"
   }

@@ -17,7 +17,7 @@ const distube = new DisTube(client, { emitNewSongOnly: true, searchSongs: 0, lea
 
 distube.on("addSong", (queue, song) => {
     queue.textChannel.send(
-        `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}. `
+        `${config.emotes.notes} Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}. `
     )
     /* console.log("Duration " + queue.formattedDuration);
     console.log('Current queue:\n' + queue.songs.map((song, id) =>
