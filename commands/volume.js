@@ -10,7 +10,7 @@ module.exports = {
 
         const volume = parseInt(args[0])
 
-        if (isNaN(volume)) return message.channel.send(`| Please enter a valid number!`)
+        if (isNaN(volume) || volume <= 0) return message.channel.send(`| Please enter a valid number!`)
 
         distube.setVolume(message, volume)
         message.channel.send(`| Volume set to \`${volume}\``)
