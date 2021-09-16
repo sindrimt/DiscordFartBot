@@ -2,7 +2,7 @@ const config = require("../Data/config.json");
 const { aliases } = require("../commands/hello");
 
 module.exports = async (client, message) => {
-  if (message.author.bot || !message.guild) return;
+  if (/* message.author.bot ||  */!message.guild) return;
 
   const prefix = config.prefix;
 
