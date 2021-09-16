@@ -56,7 +56,6 @@ module.exports = {
     execute: async (client, message, args) => {
         /* const queue = distube.getQueue(message);
         console.log(queue); */
-
         const string = args.join(" ");
         let result = args.toString().replace(/,/g, " ");
         message.channel.send(emotes.magGlass + " Searching matches for : " + "`" + result + "`");

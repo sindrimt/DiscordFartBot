@@ -5,7 +5,7 @@ module.exports = {
   category: ["misc"],
   execute: async (client, message) => {
     return await message.reply(
-      "https://discord.com/api/oauth2/authorize?client_id=880738943908331520&permissions=0&scope=bot"
+      "https://discord.com/api/oauth2/authorize?client_id=880738943908331520&permissions=8&scope=bot"
     );
   },
 };
