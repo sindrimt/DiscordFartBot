@@ -1,0 +1,24 @@
+{
+  "token": "YOUR_KEY_HERE",
+  "prefix": "PREFIX_HERE (ex. ! or ?)",
+  "author": "YOUR_NAME",
+  "resources": [
+    "https://cdn.discordapp.com/attachments/880738403040239678/882915356509896744/fart-02.mp3",
+    "https://cdn.discordapp.com/attachments/880738403040239678/882918890022268928/fart-08.mp3",
+    "https://cdn.discordapp.com/attachments/880738403040239678/883024462742695996/jojos-bizarre-adventure-ay-ay-ay-ay-_-sound-effect-AudioTrimmer.com.mp3",
+    "https://cdn.discordapp.com/attachments/880738403040239678/884813744419532801/Toiwinkuru_Twin_Kill_-_Rare_Japanoise_Tape_1987-AudioTrimmer.com.mp3",
+    "https://cdn.discordapp.com/attachments/880738403040239678/884813800384131122/Toiwinkuru_Twin_Kill_-_Rare_Japanoise_Tape_1987-AudioTrimmer.com_1.mp3"
+  ],
+  "images": {
+    "luffy": "https://avatars.githubusercontent.com/u/90549698?s=400&u=a447d463b0dd0c1a943f449d33159c6524917ccf&v=4"
+  },
+  "links": {
+    "github": "https://github.com/sindrimt/DiscordFartingBot"
+  },
+  "emotes": {
+    "magGlass": ":mag_right:",
+    "notes": ":notes:",
+    "wink": ":wink:",
+    "sob": ":sob:"
+  }
+}
