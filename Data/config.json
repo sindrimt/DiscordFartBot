@@ -1,7 +1,7 @@
 {
-  "token": "YOUR_KEY_HERE",
-  "prefix": "PREFIX_HERE (ex. ! or ?)",
-  "author": "YOUR_NAME",
+  "token": "",
+  "prefix": "!",
+  "author": "Sindrimt",
   "resources": [
     "https://cdn.discordapp.com/attachments/880738403040239678/882915356509896744/fart-02.mp3",
     "https://cdn.discordapp.com/attachments/880738403040239678/882918890022268928/fart-08.mp3",
