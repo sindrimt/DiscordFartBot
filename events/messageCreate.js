@@ -16,7 +16,7 @@ module.exports = async (client, message) => {
   /* console.log(client.commands);
   console.log(client.aliases); */
 
-  if (client.aliases.has(command)) {// TODO IMPLEMENTER ALTNAME (FKS KUNNE SKRIVE P INSTEDET FOR PLAY)
+  if (client.aliases.has(command)) {
     //client.commands.get(client.aliases.has(command)).name;
     /*  console.log("command : " + command);
      console.log("args : " + args); */
