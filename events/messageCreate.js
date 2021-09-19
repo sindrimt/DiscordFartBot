@@ -10,13 +10,15 @@ module.exports = async (client, message) => {
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
+  console.log("args: " + args);
+  console.log("command: " + command);
 
   let commandFile;
 
   /* console.log(client.commands);
   console.log(client.aliases); */
 
-  if (client.aliases.has(command)) {// TODO IMPLEMENTER ALTNAME (FKS KUNNE SKRIVE P INSTEDET FOR PLAY)
+  if (client.aliases.has(command)) {
     //client.commands.get(client.aliases.has(command)).name;
     /*  console.log("command : " + command);
      console.log("args : " + args); */

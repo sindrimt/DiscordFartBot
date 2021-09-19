@@ -7,8 +7,8 @@ module.exports = {
     aliases: ["s"],
     category: ["music"],
     execute: async (client, message) => {
-
         const queue = distube.getQueue(message);
+        console.log(queue.songs.length);
         if (queue.songs.length >= 2) {
             queue.skip();
         } else {

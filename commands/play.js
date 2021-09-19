@@ -58,19 +58,25 @@ module.exports = {
         console.log(queue); */
         const string = args.join(" ");
         let result = args.toString().replace(/,/g, " ");
-        message.channel.send(emotes.magGlass + " Searching matches for : " + "`" + result + "`");
-        //que.addToQueue(string, position);
+        const channel = message.member.voice.channel;
 
-        try {
-            distube.voices.join(message.member.voice.channel);
-            distube.play(message, string);
+        if (!channel) {
+            message.channel.send(`Join a voice channel ${emotes.wink}`)
+            return;
+        } 
+        else {
+            message.channel.send(emotes.magGlass + " Searching matches for : " + "`" + result + "`");
+            //que.addToQueue(string, position);
 
-            //console.log(message.author.avatarURL());
-
-        }
-        catch (e) {
-            message.channel.send(`Join a voice channel ${emotes.wink}`);
-            console.log(`Error ${e}`);
-        }
-    },
+            try {
+                distube.voices.join(message.member.voice.channel);
+                distube.play(message, string);
+                //console.log(message.author.avatarURL());
+            }
+            catch (e) {
+                //message.channel.send(`Join a voice channel ${emotes.wink}`);
+                console.log(`Error ${e}`);
+            }
+    }
+},
 };
