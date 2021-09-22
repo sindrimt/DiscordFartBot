@@ -7,13 +7,19 @@ module.exports = {
   aliases: ["s", "next"],
   category: ["music"],
   execute: async (client, message) => {
-    const queue = distube.getQueue(message);
-    console.log(queue.songs.length);
-    if (queue.songs.length >= 2) {
-      queue.skip();
-    } else {
-      message.channel.send(`Empty queue ${config.emotes.sob} Quiet now`);
-      queue.stop();
+    try {
+      const queue = distube.getQueue(message);
+      console.log(queue.songs.length);
+      if (queue.songs.length >= 2) {
+        queue.skip();
+      } else {
+        message.channel.send(
+          `Empty queue ${config.emotes.sob}...aaaand leaving..`
+        );
+        queue.stop();
+      }
+    } catch (error) {
+      console.log(error);
     }
   },
 };
