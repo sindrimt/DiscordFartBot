@@ -11,7 +11,9 @@ module.exports = {
     if (queue.songs.length >= 2) {
       queue.skip();
     } else {
-      message.channel.send(`Empty queue ${config.emotes.sob}`);
+      message.channel.send(
+        `Empty queue ${config.emotes.sob}... aaand leaving `
+      );
       queue.stop();
     }
   },
