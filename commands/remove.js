@@ -15,7 +15,7 @@ module.exports = {
         message.channel.send("Out of range");
         return;
       }
-      queue.songs.splice(pos - 1, 1);
+      queue.songs.splice(pos, 1);
     }
     removeSong(args);
   },
