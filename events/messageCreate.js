@@ -10,8 +10,11 @@ module.exports = async (client, message) => {
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
+<<<<<<< HEAD
   console.log("args: " + args);
   console.log("command: " + command);
+=======
+>>>>>>> 2efbd8e9e54c6a0049f5630e27c2071584251797
 
   let commandFile;
 
