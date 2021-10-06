@@ -15,6 +15,7 @@ module.exports = {
 
     if (!channel) return;
     queue.stop();
+    console.log("Log _ Stopped : Because of queue.stop (shutUp.js)");
 
     /*
     const connection = voiceDiscord.joinVoiceChannel({
