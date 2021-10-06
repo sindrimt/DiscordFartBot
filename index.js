@@ -28,10 +28,7 @@ require("./util/handlers")(client);
 // med en bestemt sjanse (randomIntCheckValue) :)
 client.on("messageCreate", async (message) => {
   if (message.author.bot || message.content.startsWith(prefix)) {
-<<<<<<< HEAD
-=======
     console.log(`Message: ${message.content}`);
->>>>>>> 2efbd8e9e54c6a0049f5630e27c2071584251797
     return;
   }
 
