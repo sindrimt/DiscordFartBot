@@ -2,9 +2,12 @@
   "name": "testforfartbot",
   "version": "1.0.0",
   "description": "",
+<<<<<<< HEAD
+=======
   "engines": {
     "node": ">=16"
   },
+>>>>>>> 2efbd8e9e54c6a0049f5630e27c2071584251797
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

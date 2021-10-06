@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "token": "ODgwNzM4OTQzOTA4MzMxNTIw.YSiqDw.OSAflUcKgPYnOt8EsmgOypnFEiA",
   "prefix": "!",
   "author": "Sindrimt",
+=======
+   "token": "YOUR_KEY_HERE",
+  "prefix": "PREFIX_HERE (ex. ! or ?)",
+  "author": "YOUR_NAME",
+>>>>>>> 0e22a98fbf4b83bfb261d37df6f6da1dfc1b07d1
   "resources": [
     "https://cdn.discordapp.com/attachments/880738403040239678/882915356509896744/fart-02.mp3",
     "https://cdn.discordapp.com/attachments/880738403040239678/882918890022268928/fart-08.mp3",
