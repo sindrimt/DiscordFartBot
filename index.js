@@ -9,6 +9,9 @@ const prefix = config.prefix;
 const resources = config.resources;
 const token = config.token;
 
+const aiodeId = 483377420494176258;
+const hydraId = 547905866255433758;
+
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.categories = new Discord.Collection();
@@ -27,10 +30,27 @@ require("./util/handlers")(client);
 // DENNE spiller av en av lydene i config/resources randomly
 // med en bestemt sjanse (randomIntCheckValue) :)
 client.on("messageCreate", async (message) => {
-  if (message.author.bot || message.content.startsWith(prefix)) {
-    console.log(`Message: ${message.content}`);
-    return;
-  }
+  //if (message.author.bot || message.content.startsWith(prefix)) {
+
+  /* randomIntCheck = Math.floor(Math.random() * 10);
+  randomIntPick = Math.floor(Math.random() * 3);
+  console.log(`RandomintCheck er ${randomIntCheck}`);
+  messageUserId = message.member.user.id; */
+  //console.log(messageUserId);
+
+  /* if (randomIntCheck <= 2) {
+    if (messageUserId == aiodeId) {
+      message.channel.send(config.responses.aiode[randomIntPick]);
+    }
+
+    if (messageUserId == hydraId) {
+      message.channel.send(config.responses.hydra[randomIntPick]);
+    }
+
+    
+  } */
+  //return;
+  //}
 
   //var randomIntCheckValue = Math.floor(Math.random() * 10) + 1; // 0-3
   console.log(`Message : ${message.content}`);

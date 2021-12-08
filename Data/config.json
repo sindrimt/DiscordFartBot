@@ -1,7 +1,7 @@
 {
-    "token": "YOUR_KEY_HERE",
+  "token": "YOUR_TOKEN",
   "prefix": "PREFIX_HERE (ex. ! or ?)",
-  "author": "YOUR_NAME",
+  "author": "YOUR-NAME",
   "resources": [
     "https://cdn.discordapp.com/attachments/880738403040239678/882915356509896744/fart-02.mp3",
     "https://cdn.discordapp.com/attachments/880738403040239678/882918890022268928/fart-08.mp3",
@@ -20,5 +20,17 @@
     "notes": ":notes:",
     "wink": ":wink:",
     "sob": ":sob:"
+  },
+  "responses": {
+    "hydra": [
+      "OMMG shut the fock up hydra trash bot :clown:",
+      ":face_exhaling:Cringe hydra get out???",
+      "jesus christ hydra... dog music dog bot sit:woozy_face:"
+    ],
+    "aiode": [
+      "Aiode:yawning_face::sleeping: so trash get out:joy_cat:",
+      "imaaaagin å ikke å nisselue??:nauseated_face:",
+      "ff so huge bot gap know your place:face_vomiting:"
+    ]
   }
 }
