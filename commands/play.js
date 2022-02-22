@@ -23,9 +23,13 @@ const distube = new DisTube(client, {
 //const que = new DisTube.Queue(distube, message, song, textChannel);
 
 distube.on("addSong", (queue, song) => {
-  queue.textChannel.send(
-    `${config.emotes.notes} Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}. `
-  );
+  try {
+    queue.textChannel.send(
+      `${config.emotes.notes} Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}. `
+    );
+  } catch (e) {
+    console.log(`ADD song Error -- Error:  ${e}`);
+  }
   /* console.log("Duration " + queue.formattedDuration);
     console.log('Current queue:\n' + queue.songs.map((song, id) =>
         `**${id + 1}**. [${song.name}](${song.url}) - \`${song.formattedDuration}\``
@@ -33,27 +37,31 @@ distube.on("addSong", (queue, song) => {
 });
 
 distube.on("playSong", (queue, song) => {
-  const embed = new MessageEmbed()
-    .setColor("#0099ff")
-    .setTitle(song.name)
-    .setURL(song.url)
-    .setAuthor(`by  ${song.user.username}`, song.user.avatarURL())
-    // .setDescription(client.commands.map(cmd => `\`${prefix + cmd.name}\``).join(", "))
-    .setThumbnail(song.thumbnail)
-    .addFields(
-      { name: "Channel", value: `${song.uploader.name}`, inline: true },
-      {
-        name: "Video length",
-        value: `${song.formattedDuration}`,
-        inline: true,
-      },
-      { name: "Views", value: `${song.views}`, inline: true }
-    )
-    //.addField('Inline field title', 'Some value here', true)
-    .setTimestamp()
-    .setFooter(` - Enjoy Music :)`, luffy);
+  try {
+    const embed = new MessageEmbed()
+      .setColor("#0099ff")
+      .setTitle(song.name)
+      .setURL(song.url)
+      .setAuthor(`by  ${song.user.username}`, song.user.avatarURL())
+      // .setDescription(client.commands.map(cmd => `\`${prefix + cmd.name}\``).join(", "))
+      .setThumbnail(song.thumbnail)
+      .addFields(
+        { name: "Channel", value: `${song.uploader.name}`, inline: true },
+        {
+          name: "Video length",
+          value: `${song.formattedDuration}`,
+          inline: true,
+        },
+        { name: "Views", value: `${song.views}`, inline: true }
+      )
+      //.addField('Inline field title', 'Some value here', true)
+      .setTimestamp()
+      .setFooter(` - Enjoy Music :)`, luffy);
 
-  queue.textChannel.send({ embeds: [embed] });
+    queue.textChannel.send({ embeds: [embed] });
+  } catch (e) {
+    console.log(`PLAY song Error -- Error:  ${e}`);
+  }
 });
 
 module.exports = {
@@ -73,9 +81,13 @@ module.exports = {
       message.channel.send(`Join a voice channel ${emotes.wink}`);
       return;
     } else {
-      message.channel.send(
-        emotes.magGlass + " Searching matches for : " + "`" + result + "`"
-      );
+      try {
+        message.channel.send(
+          emotes.magGlass + " Searching matches for : " + "`" + result + "`"
+        );
+      } catch (e) {
+        message.channel.send(`No search result   ERROR ${e}`);
+      }
       //que.addToQueue(string, position);
 
       try {

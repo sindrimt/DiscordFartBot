@@ -80,5 +80,8 @@ client.on("messageCreate", async (message) => {
     connection.destroy();
   }); */
 });
+client.on("error", (message, err) =>
+  message.channel.send("An error encountered: " + err)
+);
 
 client.login(token);

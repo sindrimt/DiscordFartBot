@@ -8,14 +8,22 @@ module.exports = {
   aliases: ["stfu", "die", "fuckoff", "pissoffidiot", "jævel", "dø"],
   category: ["music"],
   execute: async (client, message) => {
-    message.channel.send("Okay masta :disappointed_relieved: ");
+    try {
+      const queue = distube.getQueue(message);
+      const channel = message.member.voice.channel;
 
-    const queue = distube.getQueue(message);
-    const channel = message.member.voice.channel;
-
-    if (!channel) return;
-    queue.stop();
-    console.log("Log _ Stopped : Because of queue.stop (shutUp.js)");
+      if (!channel) {
+        return;
+      }
+      queue.stop();
+      message.channel.send("Okay masta :disappointed_relieved: ");
+      console.log("Log _ Stopped : Because of queue.stop (shutUp.js)");
+    } catch (e) {
+      message.channel.send(
+        "Why the fuck would i leafe im not even in the channel bogo ........"
+      );
+      console.log(e);
+    }
 
     /*
     const connection = voiceDiscord.joinVoiceChannel({
