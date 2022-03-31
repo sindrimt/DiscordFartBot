@@ -1,4 +1,4 @@
-##Discord music and fun bot :DD
+<h2>Discord music and fun bot :DD</h2>
 
 1. To set it up yourself, go to https://discord.com/developers/applications and create a bot<br>
 2. Make sure to invite the bot to your server by copying this link<br>
